@@ -26,7 +26,7 @@ app.get('/api/config/paypal', (req, res)=> res.send({
 }))
 app.use('/api/upload', uploadRoutes)
 app.use(express.static(path.join( 'backend' ,'public')))
-app.use(cors({ origin: 'http://localhost:5173', methods:["GET", "POST", "PUT", "PATCH", "DELETE"] }));
+app.use(cors({ origin: 'http://localhost:5000', methods:["GET", "POST", "PUT", "PATCH", "DELETE"] }));
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
