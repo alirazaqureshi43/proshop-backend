@@ -6,6 +6,7 @@ import orderRoutes from '../backend/routes/orderRoutes.js'
 import uploadRoutes from '../backend/routes/uploadRoutes.js'
 import cookieParser from "cookie-parser";
 import {notFound, errorHandler} from '../backend/middleware/errorMiddleware.js'
+import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config()
 import connectDB from "../backend/config/db.js";
@@ -25,6 +26,7 @@ app.get('/api/config/paypal', (req, res)=> res.send({
 }))
 app.use('/api/upload', uploadRoutes)
 app.use(express.static(path.join( 'backend' ,'public')))
+app.use(cors({ origin: 'http://localhost:5173', methods:["GET", "POST", "PUT", "PATCH", "DELETE"] }));
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
