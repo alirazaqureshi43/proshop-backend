@@ -1,4 +1,4 @@
-{ "version": 2, "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index.js" }], "headers": [
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }], "headers": [
   {
     "source": "/api/(.*)",
     "headers": [
